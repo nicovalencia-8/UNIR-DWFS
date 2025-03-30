@@ -53,7 +53,6 @@ function redConverter() {
 
   ObjHandler.savePixels(pixeles, outputPath);
 }
-
 /**
  * Esta función debe transformar una imagen en escala de verdes.
  *
@@ -171,9 +170,21 @@ function scaleDown() {
   let outputPath = 'output/tucan_scale_down.jpg';
   let pixels = ObjHandler.getPixels();
 
-  //Aqui tu codigo
+  let pixeles= [];
+  for(let i =0; i < pixels.length; i++) {
+    let nuevaFila = [];
+    for(let j =0; j < pixels[i].length; j++) {
+        if (i % 2=== 0 && j % 2 === 0) {
+          nuevaFila.push(pixels[i][j]);
+        }
+    }
+    if(nuevaFila.length > 0){
+      pixeles.push(nuevaFila);
+    }
 
-  ObjHandler.savePixels(pixels, outputPath, ObjHandler.getShape()[0] / 2, ObjHandler.getShape()[1] / 2);
+  }
+
+  ObjHandler.savePixels(pixeles, outputPath, ObjHandler.getShape()[0] / 2, ObjHandler.getShape()[1] / 2);
 }
 
 /**
@@ -185,9 +196,20 @@ function dimBrightness(dimFactor) {
   let outputPath = 'output/tucan_dimed.jpg';
   let pixels = ObjHandler.getPixels();
 
-  //Aqui tu codigo
+  let pixeles= [];
+  for(let i =0; i < pixels.length; i++) {
+    let nuevaFila = [];
+    for(let j =0; j < pixels[i].length; j++) {
+      let result = [];
+      for (let k =0; k < pixels[i][j].length; k++) {
+        result.push(pixels[i][j][k]/dimFactor);
+      }
+      nuevaFila.push(result); //result es RGB [120, 10, 44 ]
+    }
+    pixeles.push(nuevaFila);
+  }
 
-  ObjHandler.savePixels(pixels, outputPath);
+  ObjHandler.savePixels(pixeles, outputPath);
 }
 
 /**
@@ -201,9 +223,20 @@ function invertColors() {
   let outputPath = 'output/tucan_inverse.jpg';
   let pixels = ObjHandler.getPixels();
 
-  //Aqui tu codigo
+  let pixeles= [];
+  for(let i =0; i < pixels.length; i++) {
+    let nuevaFila = [];
+    for(let j =0; j < pixels[i].length; j++) {
+      let result = [];
+      for (let k =0; k < pixels[i][j].length; k++) {
+        result.push(255-pixels[i][j][k]);
+      }
+      nuevaFila.push(result); //result es RGB [120, 10, 44 ]
+    }
+    pixeles.push(nuevaFila);
+  }
 
-  ObjHandler.savePixels(pixels, outputPath);
+  ObjHandler.savePixels(pixeles, outputPath);
 }
 
 /**
@@ -213,18 +246,29 @@ function invertColors() {
  * @param alphaSecond - Factor de fusion para la segunda imagen
  */
 function merge(alphaFirst, alphaSecond) {
-  let catHandler = new ImageHandler('input/cat.jpg');
-  let dogHandler = new ImageHandler('input/dog.jpg');
+  let catHandler = new ClassImageHandler('input/cat.jpg');
+  let dogHandler = new ClassImageHandler('input/dog.jpg');
   let outputPath = 'output/merged.jpg';
 
   let catPixels = catHandler.getPixels();
   let dogPixels = dogHandler.getPixels();
 
-  let pixels = [];
+  let pixeles = [];
 
-  //Aqui tu codigo
+  for(let i =0; i < catPixels.length; i++) {
+    let nuevaFila = [];
+    for(let j =0; j < catPixels[i].length; j++) {
+      let result = [];
+      for (let k =0; k < catPixels[i][j].length; k++) {
+        let merge = (catPixels[i][j][k]*alphaFirst)+(dogPixels[i][j][k]*alphaSecond);// operacion de fusion de imagen
+        result.push(merge);
+      }
+      nuevaFila.push(result); //result es RGB [120, 10, 44 ]
+    }
+    pixeles.push(nuevaFila);
+  }
 
-  dogHandler.savePixels(pixels, outputPath);
+  dogHandler.savePixels(pixeles, outputPath);
 }
 
 
@@ -246,7 +290,7 @@ function merge(alphaFirst, alphaSecond) {
  *     Negativo: 8
  *     Fusion de imagenes: 9
  */
-let optionN = 5;
+let optionN = 9;
 
 switch (optionN) {
   case 1: redConverter(); break;
@@ -257,6 +301,6 @@ switch (optionN) {
   case 6: scaleDown(); break;
   case 7: dimBrightness(2); break;
   case 8: invertColors(); break;
-  case 9: merge(0.3, 0.7); break;
+  case 9: merge(0.5, 0.5); break;
   default: ejemplo();
 }
