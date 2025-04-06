@@ -1,3 +1,21 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 60%;
+    width: 40%;
+    background-color: #dfe1cc;
+    border-radius: 15px;
+    margin: auto;
+    margin-top: 12%;
+    padding: 30px;
+}
+
+body {
+    vertical-align: bottom;
+}
+
 button {
     background-color: #4CAF50; /* Green */
     border: none;
@@ -13,23 +31,6 @@ button {
 
 .button {
     width: auto;
-}
-
-.container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 60%;
-    width: 40%;
-    background-color: #888888;
-    border-radius: 15px;
-    margin: auto;
-    padding: 30px;
-}
-
-body {
-    vertical-align: bottom;
 }
 
 img {
