@@ -40,18 +40,7 @@ function ejemplo() {
  */
 function redConverter() {
   let outputPath = 'output/tucan_red.jpg';
-  let pixels = ObjHandler.getPixels();
-  let pixeles= [];
-  for(let i =0; i < pixels.length; i++) {
-    let nuevaFila = [];
-    for(let j =0; j < pixels[i].length; j++) {
-      let pixel_actual=pixels[i][j];
-      nuevaFila.push([pixel_actual[0],0,0]);
-    }
-    pixeles.push(nuevaFila);
-  }
-
-  ObjHandler.savePixels(pixeles, outputPath);
+  rgbConverter(outputPath, 'red');
 }
 /**
  * Esta función debe transformar una imagen en escala de verdes.
@@ -60,19 +49,7 @@ function redConverter() {
  */
 function greenConverter() {
   let outputPath = 'output/tucan_green.jpg';
-  let pixels = ObjHandler.getPixels();
-
-  let pixeles= [];
-  for(let i =0; i < pixels.length; i++) {
-    let nuevaFila = [];
-    for(let j =0; j < pixels[i].length; j++) {
-      let pixel_actual=pixels[i][j];
-      nuevaFila.push([0,pixel_actual[1],0]);
-    }
-    pixeles.push(nuevaFila);
-  }
-
-  ObjHandler.savePixels(pixeles, outputPath);
+    rgbConverter(outputPath, 'green');
 }
 
 /**
@@ -82,20 +59,34 @@ function greenConverter() {
  */
 function blueConverter() {
   let outputPath = 'output/tucan_blue.jpg';
-  let pixels = ObjHandler.getPixels();
+  rgbConverter(outputPath, 'blue');
 
+}
+
+function rgbConverter(outputPath, color){
+  let pixels = ObjHandler.getPixels();
   let pixeles= [];
   for(let i =0; i < pixels.length; i++) {
     let nuevaFila = [];
     for(let j =0; j < pixels[i].length; j++) {
       let pixel_actual=pixels[i][j];
-      nuevaFila.push([0,0,pixel_actual[2]]);
+      switch (color) {
+        case 'red':
+          nuevaFila.push([pixel_actual[0],0,0]);
+          break;
+        case 'green':
+          nuevaFila.push([0,pixel_actual[1],0]);
+          break;
+        case 'blue':
+          nuevaFila.push([0,0,pixel_actual[2]]);
+          break;
+      }
+
     }
     pixeles.push(nuevaFila);
   }
 
   ObjHandler.savePixels(pixeles, outputPath);
-
 }
 
 /**
@@ -290,7 +281,7 @@ function merge(alphaFirst, alphaSecond) {
  *     Negativo: 8
  *     Fusion de imagenes: 9
  */
-let optionN = 9;
+let optionN = 2;
 
 switch (optionN) {
   case 1: redConverter(); break;
