@@ -1,0 +1,42 @@
+button {
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+
+.button {
+    width: auto;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 60%;
+    width: 40%;
+    background-color: #888888;
+    border-radius: 15px;
+    margin: auto;
+    padding: 30px;
+}
+
+body {
+    vertical-align: bottom;
+}
+
+img {
+    display: flex;
+    margin: auto;
+}
+
+.joke {
+    display: inline-block;
+}
