@@ -75,10 +75,7 @@ botonReservar.addEventListener("click", clickReservar);
 
 function clickReservar(){
     let inputNumSeats = document.querySelector("#numSeats").value;
-    let prueba = suggest(parseInt(inputNumSeats), butacas);
-
-    console.log("Reserva",prueba);
+    let asientosReservados = suggest(parseInt(inputNumSeats), butacas);
+    let result = asientosReservados.map(asiento => asiento.id).join()
+    console.log("Asientos sugeridos",result);
 }
-
-
-
