@@ -54,10 +54,8 @@ function suggest(asientosReserva, butacas){
                     v = 0;
                     asientosLibres = [];
                 }
-
                 j++;
             }
-
             i--;
         }
         return asientosLibres;

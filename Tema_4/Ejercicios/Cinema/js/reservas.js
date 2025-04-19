@@ -13,7 +13,7 @@ function setup() {
             // Nuevo asiento
             fila.push({
                 id: idContador++,
-                estado: false // Estado inicial libre
+                estado: Math.random() < 0.5 // Estado inicial libre
             });
         }
         butacas.push(fila);
@@ -66,10 +66,52 @@ function suggest(asientosReserva, butacas){
     }
 }
 
+function butacasUI(butacas){
+    const layout = document.getElementById("cinema-layout");
+
+    let filas = butacas.length;
+    let letraFila = "ABCDEFGHIJ";
+
+    for (let j = 1; j <= filas; j++) {
+        let fila = document.createElement("div");
+        fila.classList.add("row");
+        fila.setAttribute("id", "fila"+j);
+        layout.appendChild(fila);
+
+        let nombreFila = document.createElement("div");
+        nombreFila.classList.add("rowName");
+        nombreFila.innerHTML = letraFila[j-1];
+        fila.appendChild(nombreFila);
+    }
+
+    butacas.map( butaca => {
+        let nFila = Math.floor((butaca.id - 1) / 10) + 1;
+
+        let seat = document.createElement("div");
+        seat.classList.add("seat");
+        dispoButacas(seat, butaca);
+        seat.setAttribute("id", butaca.id);
+        seat.innerHTML = butaca.id;
+
+        let fila = document.getElementById("fila" + nFila);
+
+        console.log("fila" + nFila);
+
+        fila.appendChild(seat);
+    });
+}
+
+function dispoButacas(seat, butaca){
+    seat.classList.add(butaca.estado ? "occupied" : "available");
+}
+
 // Inicializar la matriz
 const butacas = setup();
-
+butacasUI(butacas);
 let botonReservar = document.getElementById("reservar");
+let inputNumSeats = document.getElementById("numSeats");
+
+inputNumSeats.addEventListener("keyup", handlePreReserva);
 
 botonReservar.addEventListener("click", clickReservar);
 
@@ -78,4 +120,20 @@ function clickReservar(){
     let asientosReservados = suggest(parseInt(inputNumSeats), butacas);
     let result = asientosReservados.map(asiento => asiento.id).join()
     console.log("Asientos sugeridos",result);
+}
+
+function handlePreReserva(butacas){
+
+    let seats = document.getElementsByClassName("seat");
+    [...seats].forEach(seat =>{
+        let currentButaca = butacas.find(butaca => butaca.id === seat.id);
+        dispoButacas(seat, currentButaca);
+    })
+    let asientosReservados = suggest(parseInt(this.value), butacas);
+    asientosReservados.map(asiento => {
+        let currentSeat = document.getElementById(asiento.id);
+        currentSeat.classList.remove("available");
+        currentSeat.classList.remove("occupied");
+        currentSeat.classList.add("occupied");
+    })
 }

@@ -13,7 +13,7 @@ body {
 .screen-container {
     margin: 10px auto;
     background-color: #888;
-    width: 50%;
+    width: 85%;
     padding: 10px;
     border-radius: 5px;
 }
@@ -22,7 +22,7 @@ body {
     background-color: #bbb;
     height: 30px;
     margin: 10px auto;
-    width: 70%;
+    width: 85%;
     text-align: center;
     line-height: 30px;
     font-weight: bold;
@@ -52,7 +52,19 @@ body {
 }
 
 .seat {
-    width: 35px;
+    width: 45px;
+    height: 35px;
+    margin: 5px;
+    text-align: center;
+    line-height: 35px;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.rowName {
+    width: 45px;
     height: 35px;
     margin: 5px;
     text-align: center;
