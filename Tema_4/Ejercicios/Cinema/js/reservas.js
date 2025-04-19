@@ -85,8 +85,8 @@ function butacasUI(butacas){
     }
 
     butacas.map( butaca => {
+        butaca.map( butaca => {
         let nFila = Math.floor((butaca.id - 1) / 10) + 1;
-
         let seat = document.createElement("div");
         seat.classList.add("seat");
         dispoButacas(seat, butaca);
@@ -95,13 +95,14 @@ function butacasUI(butacas){
 
         let fila = document.getElementById("fila" + nFila);
 
-        console.log("fila" + nFila);
 
         fila.appendChild(seat);
+        });
     });
 }
 
 function dispoButacas(seat, butaca){
+    seat.classList.remove("occupied");
     seat.classList.add(butaca.estado ? "occupied" : "available");
 }
 
@@ -122,11 +123,11 @@ function clickReservar(){
     console.log("Asientos sugeridos",result);
 }
 
-function handlePreReserva(butacas){
-
+function handlePreReserva(){
+    let flatButacas = butacas.flat();
     let seats = document.getElementsByClassName("seat");
     [...seats].forEach(seat =>{
-        let currentButaca = butacas.find(butaca => butaca.id === seat.id);
+        let currentButaca = flatButacas.find(butaca => parseInt(butaca.id) === parseInt(seat.id));
         dispoButacas(seat, currentButaca);
     })
     let asientosReservados = suggest(parseInt(this.value), butacas);
