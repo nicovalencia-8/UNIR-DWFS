@@ -1,1 +1,43 @@
 @import "tailwindcss";
+
+.header{
+    @apply flex w-full m-4;
+}
+
+.header__icon{
+    background-image: url('assets/relatos-de-papel-logo.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    height: 80px;
+    @apply w-1/4;
+}
+
+.header__buscador{
+    @apply w-1/2 relative m-3;
+}
+
+.buscador__input{
+    @apply block w-full p-4 ps-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500
+}
+
+.buscador__icon{
+    @apply absolute inset-y-5 end-4 items-center ps-3 pointer-events-none;
+}
+
+.icon__svg{
+    @apply w-4 h-4 text-gray-500 dark:text-gray-400;
+}
+
+.header__carticon{
+    @apply w-16;
+}
+
+.header__hearticon{
+    @apply w-16;
+}
+.header__usericon{
+    @apply w-16;
+}
+.header__languageicon{
+    @apply w-16;
+}
