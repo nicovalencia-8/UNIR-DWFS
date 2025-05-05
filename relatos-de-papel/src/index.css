@@ -5,11 +5,8 @@
 }
 
 .header__icon{
-    background-image: url('assets/relatos-de-papel-logo.png');
-    background-size: contain;
-    background-repeat: no-repeat;
     height: 80px;
-    @apply w-1/4;
+    @apply w-1/4 bg-contain bg-no-repeat bg-[url('assets/relatos-de-papel-logo.png')];
 }
 
 .header__buscador{
@@ -29,15 +26,52 @@
 }
 
 .header__carticon{
-    @apply w-16;
+    @apply w-16 h-20 bg-no-repeat bg-contain mt-1 cursor-pointer relative inline-block bg-[url('assets/cart-icon.svg')];
 }
 
-.header__hearticon{
-    @apply w-16;
+.header__favoriteicon{
+    @apply w-16 h-12 bg-no-repeat bg-contain mt-3 cursor-pointer relative bg-[url('assets/heart-icon.svg')];
+}
+.header__favoriteicon:hover{
+    transition: background-image 0.5s;
+    @apply w-16 h-12 bg-no-repeat bg-contain mt-3 cursor-pointer bg-[url('assets/heart-icon-hover.svg')];
 }
 .header__usericon{
-    @apply w-16;
+
+    @apply w-16 h-12 bg-no-repeat bg-contain mt-3 cursor-pointer relative bg-[url('assets/user-icon.svg')];
 }
 .header__languageicon{
-    @apply w-16;
+    @apply w-16 h-12 ml-4 text-purple-800 transition-transform duration-300 hover:rotate-12 cursor-pointer relative;
+}
+
+.header__carticon .carticon__tooltiptext {
+    @apply w-24 invisible text-center rounded-md p-2 -mt-4 text-white absolute top-full z-1 left-[-18px] bg-[#86688c];
+}
+
+.header__carticon:hover .carticon__tooltiptext {
+    @apply visible;
+}
+
+.header__usericon .usericon__tooltiptext {
+    @apply w-24 invisible text-center rounded-md p-2 text-white mt-2 absolute top-full z-1 left-[-18px] bg-[#86688c];
+}
+
+.header__usericon:hover .usericon__tooltiptext{
+    @apply visible;
+}
+
+.header__favoriteicon .favoriteicon__tooltiptext {
+    @apply w-24 invisible text-center rounded-md p-2 text-white mt-2 absolute top-full z-1 left-[-18px] bg-[#86688c];
+}
+
+.header__favoriteicon:hover .favoriteicon__tooltiptext {
+    @apply visible;
+}
+
+.header__languageicon .languageicon__tooltiptext {
+    @apply w-24 invisible text-center rounded-md p-2 text-white absolute top-full z-1 left-[-18px] bg-[#86688c];
+}
+
+.header__languageicon:hover .languageicon__tooltiptext {
+    @apply visible;
 }
