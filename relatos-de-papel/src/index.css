@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 .header{
-    @apply flex w-full mt-4 mb-2 shadow-md bg-white z-10;
+    @apply flex w-full mt-2 mb-2 shadow-md bg-white z-10 gap-x-4;
 }
 
 .header__icon{
@@ -26,22 +26,22 @@
 }
 
 .header__carticon{
-    @apply w-16 h-20 bg-no-repeat bg-contain mt-1 cursor-pointer relative inline-block bg-[url('assets/cart-icon.svg')];
+    @apply w-16 h-10 bg-no-repeat bg-contain mt-5 cursor-pointer relative inline-block bg-[url('assets/cart-icon.svg')];
 }
 
 .header__favoriteicon{
-    @apply w-16 h-12 bg-no-repeat bg-contain mt-3 cursor-pointer relative bg-[url('assets/heart-icon.svg')];
+    @apply w-16 h-8 bg-no-repeat bg-contain mt-6 cursor-pointer relative bg-[url('assets/heart-icon.svg')];
 }
 .header__favoriteicon:hover{
     transition: background-image 0.5s;
-    @apply w-16 h-12 bg-no-repeat bg-contain mt-3 cursor-pointer bg-[url('assets/heart-icon-hover.svg')];
+    @apply w-16 h-8 bg-no-repeat bg-contain mt-6 cursor-pointer bg-[url('assets/heart-icon-hover.svg')];
 }
 .header__usericon{
 
-    @apply w-16 h-12 bg-no-repeat bg-contain mt-3 cursor-pointer relative bg-[url('assets/user-icon.svg')];
+    @apply w-16 h-8 bg-no-repeat bg-contain mt-6 cursor-pointer relative bg-[url('assets/user-icon.svg')];
 }
 .header__languageicon{
-    @apply w-16 h-12 ml-4 text-purple-800 transition-transform duration-300 hover:rotate-12 cursor-pointer relative;
+    @apply w-16 h-12 text-purple-900 transition-transform duration-300 cursor-pointer mt-5.5 relative;
 }
 
 .header__carticon .carticon__tooltiptext {
@@ -88,6 +88,22 @@
     @apply flex w-full mt-12 shadow-md pb-10 pl-10 pr-10;
 }
 
+.content__list{
+    @apply flex gap-x-10 gap-y-10;
+}
+
+.list__book{
+    @apply w-40;
+}
+
+.book__title{
+    @apply font-bold;
+}
+
+.book__image{
+    @apply h-40 w-40;
+}
+
 .footer{
     @apply flex w-full mt-4;
 }
@@ -108,3 +124,4 @@
 .footer__social_network_links{
     @apply flex w-1/3 justify-center items-center;
 }
+

@@ -1,0 +1,52 @@
+[
+  {
+    "id": 1,
+    "titulo": "Cien años de soledad",
+    "autor": "Gabriel García Márquez",
+    "precio": 18.99,
+    "stock": 12,
+    "isbn": "9780307474728",
+    "descripcion": "Una obra maestra de la literatura latinoamericana que narra la historia de la familia Buendía.",
+    "categoria": "Ficción"
+  },
+  {
+    "id": 2,
+    "titulo": "El principito",
+    "autor": "Antoine de Saint-Exupéry",
+    "precio": 9.50,
+    "stock": 25,
+    "isbn": "9780156012195",
+    "descripcion": "Una fábula filosófica que ha tocado el corazón de millones de lectores en todo el mundo.",
+    "categoria": "Infantil"
+  },
+  {
+    "id": 3,
+    "titulo": "Sapiens: De animales a dioses",
+    "autor": "Yuval Noah Harari",
+    "precio": 22.00,
+    "stock": 8,
+    "isbn": "9788499924212",
+    "descripcion": "Un recorrido por la historia de la humanidad desde la Edad de Piedra hasta la era moderna.",
+    "categoria": "Historia"
+  },
+  {
+    "id": 4,
+    "titulo": "Clean Code",
+    "autor": "Robert C. Martin",
+    "precio": 32.99,
+    "stock": 4,
+    "isbn": "9780132350884",
+    "descripcion": "Una guía práctica para escribir código limpio y mantenible en desarrollo de software.",
+    "categoria": "Tecnología"
+  },
+  {
+    "id": 5,
+    "titulo": "1984",
+    "autor": "George Orwell",
+    "precio": 14.95,
+    "stock": 10,
+    "isbn": "9780451524935",
+    "descripcion": "Una novela distópica sobre una sociedad totalitaria donde el Gran Hermano lo vigila todo.",
+    "categoria": "Ficción"
+  }
+]
