@@ -1,0 +1,21 @@
+import AuthForm from '../../components/Auth/AuthForm';
+import LoginForm from '../../components/Auth/LoginForm';
+import RegisterForm from "../../components/Auth/RegisterForm.jsx";
+
+const LoginPage = () => {
+    return (
+        <div className="content">
+            <div className="auth__wrapper">
+                <div className="auth__image"></div>
+                <div className="auth__formcontainer">
+                    <div className="auth__box">
+                        <h2 className="auth__title">Iniciar sesión</h2>
+                        <LoginForm />
+                    </div>
+                </div>
+            </div>
+        </div>
+    );
+};
+
+export default LoginPage;
