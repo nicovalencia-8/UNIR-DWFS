@@ -45,7 +45,7 @@
 }
 
 .header__carticon .carticon__tooltiptext {
-    @apply w-24 invisible text-center rounded-md p-2 -mt-4 text-white absolute top-full z-1 left-[-18px] bg-[#86688c];
+    @apply w-24 invisible text-center rounded-md p-2 mt-2 text-white absolute top-full z-1 left-[-18px] bg-[#86688c];
 }
 
 .header__carticon:hover .carticon__tooltiptext {
