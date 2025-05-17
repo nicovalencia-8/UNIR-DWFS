@@ -1,18 +1,22 @@
-import React from 'react'
-import Header from './Header'
-import Navbar from "./Navbar.jsx";
-import Footer from "./Footer.jsx";
-import Landing from "./Landing.jsx";
+import {
+  Route, 
+  createBrowserRouter, 
+  createRoutesFromElements, 
+  RouterProvider} 
+  from 'react-router-dom'
+import LandingPage from './pages/LandingPage';
+import MainLayout from './layouts/MainLayout';
+
+const router = createBrowserRouter(
+  createRoutesFromElements(
+    <Route path='/' element={<MainLayout/>}>
+      <Route index element={<LandingPage/>} />
+    </Route>
+  )
+);
 
 const App = () => {
-  return (
-    <div>
-      <Header></Header>
-      <Navbar></Navbar>
-      <Landing></Landing>
-      <Footer></Footer>
-    </div>
-  )
+  return <RouterProvider router={router}/>
 }
 
 export default App

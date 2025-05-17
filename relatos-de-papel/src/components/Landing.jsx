@@ -1,5 +1,5 @@
 import React from 'react'
-import books from './data/books.json'
+import books from '../data/books.json'
 
 const Landing = () => {
     return (
