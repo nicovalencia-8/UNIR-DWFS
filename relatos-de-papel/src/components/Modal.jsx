@@ -5,10 +5,10 @@ const Modal = ({ show, onClose, children}) => {
 
   return (
     <div className="modal">
-      <div className="bg-white p-4 rounded-xl shadow-xl max-w-sm w-full text-center">
+      <div className="modal__content">
         {children}
         <button
-          className="mt-4 text-white bg-purple-600 px-4 py-2 rounded hover:bg-purple-700"
+          className="modal__close"
           onClick={onClose}
         >
           Cerrar

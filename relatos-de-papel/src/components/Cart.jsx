@@ -13,27 +13,27 @@ const { cart, clearCart } = useCart();
       <h2 className="text-xl font-bold mb-4">Carrito de compras</h2>
 
       {cart.length === 0 ? (
-        <p>El carrito está vacío.</p>
+        <h3>El carrito está vacío.</h3>
       ) : (
         <>
-          <ul className="space-y-2 mb-4">
+          <div className="space-y-2 mb-4">
+            <div className="flex flex-row w-full gap-x-20">
+              <div className="flex-col w-50">Libro</div>
+              <div className="flex-col w-50">Precio</div>
+              <div className="flex-col w-50">Cantidad</div>
+              <div className="flex-col w-50">Total</div>
+            </div>
             {cart.map((item, index) => (
-              <li key={index} className="border p-2 rounded">
-                <div className="flex justify-between">
-                  <div>
+              <div key={index} className="flex flex-row w-full gap-x-20">
                     <p className="font-semibold">{item.titulo}</p>
-                    <p className="text-sm text-gray-600">Cantidad: {item.cantidad}</p>
-                  </div>
-                  <div className="text-right">
+                    <p className="text-sm text-gray-600">{item.cantidad}</p>
                     <p>${item.precio.toFixed(2)} c/u</p>
                     <p className="text-purple-600 font-bold">
                       Total: ${(item.precio * item.cantidad).toFixed(2)}
                     </p>
-                  </div>
-                </div>
-              </li>
+              </div>
             ))}
-          </ul>
+          </div>
 
           <div className="text-right font-semibold text-lg mb-4">
             Total compra: <span className="text-purple-600">${total.toFixed(2)}</span>
