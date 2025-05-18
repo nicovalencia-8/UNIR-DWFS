@@ -17,7 +17,11 @@ const Home = () => {
                             <span className="pricerow__price">${book.precio}</span>
                             <FaCartPlus 
                                 className="pricerow__cart" 
-                                onClick={() => addToCart(book)}
+                                onClick={(e) => {
+                                        e.stopPropagation();
+                                        addToCart(book);
+                                    }
+                                }
                             />
                         </p>
                     </li>
