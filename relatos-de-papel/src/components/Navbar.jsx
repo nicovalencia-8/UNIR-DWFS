@@ -4,7 +4,7 @@ const Navbar = () => {
     const linkClass = ({ isActive }) =>
         isActive ? 'navbar__item--active' : 'navbar__item'
     return (
-        <nav className="navbar">
+        <nav className="navbar"> 
             <NavLink className={linkClass} to='/home'>
                 Inicio
             </NavLink>

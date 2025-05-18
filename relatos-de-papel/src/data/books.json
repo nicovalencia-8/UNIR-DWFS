@@ -48,5 +48,55 @@
     "isbn": "9780451524935",
     "descripcion": "Una novela distópica sobre una sociedad totalitaria donde el Gran Hermano lo vigila todo.",
     "categoria": "Ficción"
+  },
+  {
+    "id": 6,
+    "titulo": "Rayuela",
+    "autor": "Julio Cortázar",
+    "precio": 15.50,
+    "stock": 8,
+    "isbn": "9788437604947",
+    "descripcion": "Una novela innovadora que puede leerse de múltiples formas, explorando el caos y el orden.",
+    "categoria": "Ficción"
+  },
+  {
+    "id": 7,
+    "titulo": "El amor en los tiempos del cólera",
+    "autor": "Gabriel García Márquez",
+    "precio": 17.25,
+    "stock": 10,
+    "isbn": "9780307389732",
+    "descripcion": "Una historia de amor que atraviesa décadas, con la magia narrativa de García Márquez.",
+    "categoria": "Romance"
+  },
+  {
+    "id": 8,
+    "titulo": "Pedro Páramo",
+    "autor": "Juan Rulfo",
+    "precio": 13.99,
+    "stock": 5,
+    "isbn": "9788420471839",
+    "descripcion": "Una novela breve y poderosa que mezcla lo real y lo fantástico en un pueblo fantasma.",
+    "categoria": "Realismo mágico"
+  },
+  {
+    "id": 9,
+    "titulo": "La sombra del viento",
+    "autor": "Carlos Ruiz Zafón",
+    "precio": 19.75,
+    "stock": 14,
+    "isbn": "9788408172173",
+    "descripcion": "Una historia sobre libros, amor y misterio ambientada en la Barcelona de la posguerra.",
+    "categoria": "Misterio"
+  },
+  {
+    "id": 10,
+    "titulo": "Ficciones",
+    "autor": "Jorge Luis Borges",
+    "precio": 14.80,
+    "stock": 7,
+    "isbn": "9780307950925",
+    "descripcion": "Una colección de cuentos que explora el infinito, los laberintos y los espejos con maestría filosófica.",
+    "categoria": "Filosofía"
   }
 ]
