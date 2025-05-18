@@ -13,8 +13,6 @@ import CartPage from './pages/CartPage';
 import CheckoutPage from './pages/CheckoutPage';
 import AboutPage from './pages/AboutPage';
 import ContactPage from './pages/ContactPage';
-import FavoritesPage from './pages/FavoritesPage';
-import UserPage from './pages/UserPage';
 import NotFoundPage from './pages/NotFoundPage';
 
 const router = createBrowserRouter(
@@ -26,8 +24,6 @@ const router = createBrowserRouter(
         <Route path='/checkout' element={<CheckoutPage/>} />
         <Route path='/contact' element={<ContactPage/>} />
         <Route path='/about' element={<AboutPage/>} />
-        <Route path='/favorites' element={<FavoritesPage/>} />
-        <Route path='/user' element={<UserPage/>} />
         <Route path='/*' element={<NotFoundPage/>}/>
       </Route>
       <Route path='/' element={<LandingPage/>}/>

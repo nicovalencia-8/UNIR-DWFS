@@ -14,7 +14,7 @@ const Home = () => {
             {
                 books.map((book, key) =>(
                     <li className="list__book" key={key}>
-                        <img className="book__image" src="../images/portadalibro.png" alt=""/>
+                        <img className="book__image" src={book.img_url} alt=""/>
                         <p className="book__title">{book.titulo}</p>
                         <p>{book.autor}</p>
                         <div className="book__pricerow">
