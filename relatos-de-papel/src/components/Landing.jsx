@@ -8,7 +8,7 @@ const Landing = () => {
             {
                 books.map(book =>(
                     <li className="list__book">
-                        <img className="book__image" src="../public/images/portadalibro.jpg" alt=""/>
+                        <img className="book__image" src="../images/portadalibro.jpg" alt=""/>
                         <p className="book__title">{book.titulo}</p>
                         <p>{book.autor}</p>
                         <p>${book.precio}</p>

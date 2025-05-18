@@ -1,6 +1,4 @@
-import AuthForm from '../../components/Auth/AuthForm';
 import LoginForm from '../../components/Auth/LoginForm';
-import RegisterForm from "../../components/Auth/RegisterForm.jsx";
 
 const LoginPage = () => {
     return (
