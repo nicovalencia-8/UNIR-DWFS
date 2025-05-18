@@ -1,20 +1,22 @@
-import { Link } from "react-router-dom"
+import { NavLink } from "react-router-dom"
 
 const Navbar = () => {
+    const linkClass = ({ isActive }) =>
+        isActive ? 'navbar__item--active' : 'navbar__item'
     return (
         <nav className="navbar">
-            <Link className="navbar__item" to='/home'>
+            <NavLink className={linkClass} to='/home'>
                 Inicio
-            </Link>
-            <Link className="navbar__item" to='/categorias'>
+            </NavLink>
+            <NavLink className={linkClass} to='/categorias'>
                 Categorias
-            </Link>
-            <Link className="navbar__item" to='/about'>
+            </NavLink>
+            <NavLink className={linkClass} to='/about'>
                 Acerca De
-            </Link>
-            <Link className="navbar__item" to='/contact'>
+            </NavLink>
+            <NavLink className={linkClass} to='/contact'>
                 Contacto
-            </Link>
+            </NavLink>
 
 
         </nav>

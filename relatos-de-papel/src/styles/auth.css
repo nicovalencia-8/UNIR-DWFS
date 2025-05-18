@@ -1,12 +1,11 @@
 @import "tailwindcss";
 
 .auth__wrapper {
-    @apply flex w-full min-h-screen;
+    @apply flex w-full min-h-screen items-center;
 }
 
 .auth__image {
-    @apply w-1/2 bg-cover bg-center hidden md:block;
-    background-image: url('/src/assets/bg-Auth.png'); /* Ajusta esta ruta si es diferente */
+    @apply w-1/2 h-20 -mt-10 bg-center hidden md:block bg-contain bg-no-repeat bg-[url('../assets/relatos-de-papel-logo.png')];
 }
 
 .auth__formcontainer {
@@ -31,4 +30,14 @@
 
 .auth__button {
     @apply w-full bg-[#9819fa] text-white py-2 rounded-md hover:bg-[#2e1d1a] transition duration-300;
+}
+.auth__error{
+    @apply text-red-500;
+}
+.auth__link{
+    @apply mt-4 text-right;
+}
+
+.link__purple{
+    @apply text-purple-900;
 }

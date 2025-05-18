@@ -40,9 +40,9 @@ const RegisterForm = () => {
                 onChange={(e) => setPassword(e.target.value)}
             />
             <button type="submit" className="auth__button">Crear una cuenta</button>
-            {error && <p className="text-red-500">{error}</p>}
-            <div className="mt-4 text-right">
-                <Link to='/' className="text-purple-900">Volver al login</Link>
+            {error && <p className="auth__error">{error}</p>}
+            <div className="auth__link">
+                <Link to='/login' className="link__purple">Volver al login</Link>
             </div>
         </form>
     );

@@ -2,7 +2,7 @@ import RegisterForm from '../../components/Auth/RegisterForm';
 
 const RegisterPage = () => {
     return (
-        <div className="content">
+        <div className="content__auth">
             <div className="auth__wrapper">
                 <div className="auth__image"></div>
                 <div className="auth__formcontainer">

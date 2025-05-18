@@ -33,10 +33,10 @@ const LoginForm = () => {
                 onChange={(e) => setPassword(e.target.value)}
             />
             <button type="submit" className="auth__button">Iniciar sesión</button>
-            {error && <p className="text-red-500">{error}</p>}
-            <div className="mt-4 text-right">
+            {error && <p className="auth__error">{error}</p>}
+            <div className="auth__link">
                 <span >¿No tienes una cuenta? </span>
-            <Link to='/register' className="text-purple-900">Registrate aquí</Link>
+                <Link to='/register' className="link__purple">Registrate aquí</Link>
             </div>
         </form>
     );

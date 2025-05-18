@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 const Header = () => {
   return (
     <div className="header">
-        <div className="header__icon"></div>
+        <Link className="header__icon" to='/home'></Link>
         <div className="header__buscador">
             <input type="search" id="default-search"
                    className="buscador__input"

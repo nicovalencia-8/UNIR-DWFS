@@ -1,5 +1,22 @@
 @import "tailwindcss";
 
+
+.landing{
+    @apply bg-white text-purple-800;
+}
+
+.landing__content{
+    @apply h-screen flex items-center justify-center text-center px-4;
+}
+
+.content__title{
+    @apply text-5xl md:text-7xl font-bold mb-4;
+}
+
+.content__subtitle{
+    @apply text-2xl md:text-3xl text-purple-400;
+}
+
 .header{
     @apply flex w-full mt-2 mb-2 shadow-md bg-white z-10 gap-x-4;
 }
@@ -82,6 +99,10 @@
 
 .navbar__item{
     @apply hover:text-purple-600 transition-colors duration-200 cursor-pointer;
+}
+
+.navbar__item--active{
+    @apply hover:text-purple-600 transition-colors duration-200 cursor-pointer text-purple-400;
 }
 
 .content{
