@@ -9,12 +9,12 @@ const Navbar = () => {
             <Link className="navbar__item" to='/categorias'>
                 Categorias
             </Link>
-            <div className="navbar__item">
+            <Link className="navbar__item" to='/about'>
                 Acerca De
-            </div>
-            <div className="navbar__item">
+            </Link>
+            <Link className="navbar__item" to='/contact'>
                 Contacto
-            </div>
+            </Link>
 
 
         </nav>
