@@ -1,8 +1,9 @@
-import useCart from "../hooks/cart";
+import useCart from "../hooks/cartHook";
 import { Link } from "react-router-dom";
+import { FaTrash } from "react-icons/fa";
 
 const Cart = () => {
-const { cart, clearCart } = useCart();
+const { cart, clearCart, removeFromCart } = useCart();
 
   const total = cart.reduce(
     (sum, item) => sum + item.precio * item.cantidad,
@@ -31,6 +32,11 @@ const { cart, clearCart } = useCart();
                 <p className="flex-col w-50 text-sm text-gray-600">{item.cantidad}</p>
                 <p className="flex-col w-50 text-purple-600 font-bold">
                    ${(item.precio * item.cantidad).toFixed(2)}
+                   <button
+                      className="text-red-600 hover:text-red-800 ml-4"
+                      onClick={() => removeFromCart(item.id)}>
+                      <FaTrash />
+                    </button>
                 </p>
               </div>
             ))}

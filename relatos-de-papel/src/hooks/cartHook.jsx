@@ -1,9 +1,10 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 
 const CART_KEY = "cart_relatos";
 
 export default function useCart() {
   const [cart, setCart] = useState([]);
+  const isInitialMount = useRef(true);
 
   useEffect(() => {
     const storedCart = localStorage.getItem(CART_KEY);
@@ -11,6 +12,14 @@ export default function useCart() {
       setCart(JSON.parse(storedCart));
     }
   }, []);
+
+  useEffect(() => {
+    if (isInitialMount.current) {
+      isInitialMount.current = false;
+      return;
+    }
+    localStorage.setItem(CART_KEY, JSON.stringify(cart));
+  }, [cart]);
 
   const addToCart = (book) => {
     const currentCart = [...cart];
@@ -40,5 +49,9 @@ export default function useCart() {
     setCart([]);
   };
 
-  return { cart, addToCart, clearCart };
+  const removeFromCart = (bookId) => {
+    setCart((prev) => prev.filter((item) => item.id !== bookId));;
+  };
+
+  return { cart, addToCart, clearCart, removeFromCart };
 }

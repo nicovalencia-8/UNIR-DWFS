@@ -1,7 +1,7 @@
 import books from '../data/books.json'
 import { useState } from 'react'
 import { FaCartPlus } from 'react-icons/fa'
-import useCart from "../hooks/cart"
+import useCart from "../hooks/cartHook"
 import Modal from './Modal'
 
 const Home = () => {
