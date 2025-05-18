@@ -8,7 +8,6 @@ export default function useCart() {
   useEffect(() => {
     const storedCart = localStorage.getItem(CART_KEY);
     if (storedCart) {
-      console.log("storedCart",storedCart)
       setCart(JSON.parse(storedCart));
     }
   }, []);

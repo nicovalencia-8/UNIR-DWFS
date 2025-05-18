@@ -169,4 +169,6 @@
     @apply text-2xl text-purple-900 cursor-pointer hover:text-purple-600 ;
 }
 
-
+.pricerow__tooltip{
+    @apply absolute bottom-full mb-2 left-1/2 -translate-x-1/2 scale-0 group-hover:scale-100 transition transform bg-gray-800 text-white text-xs rounded px-2 py-1 whitespace-nowrap z-10;
+}
