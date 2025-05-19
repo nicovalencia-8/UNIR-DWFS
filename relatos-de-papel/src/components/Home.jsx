@@ -3,6 +3,7 @@ import { useState } from 'react'
 import { FaCartPlus } from 'react-icons/fa'
 import useCart from "../hooks/cartHook"
 import Modal from './Modal'
+import { Link } from 'react-router-dom'
 
 const Home = () => {
     const { addToCart } = useCart();
@@ -14,9 +15,11 @@ const Home = () => {
             {
                 books.map((book, key) =>(
                     <li className="list__book" key={key}>
-                        <img className="book__image" src={book.img_url} alt=""/>
-                        <p className="book__title">{book.titulo}</p>
-                        <p>{book.autor}</p>
+                        <Link to={`/book/${book.id}`}>
+                            <img className="book__image" src={book.img_url} alt=""/>
+                            <p className="book__title">{book.titulo}</p>
+                            <p>{book.autor}</p>
+                        </Link>
                         <div className="book__pricerow">
                             <span className="pricerow__price">${book.precio}</span>
                             <div className="relative group w-fit">

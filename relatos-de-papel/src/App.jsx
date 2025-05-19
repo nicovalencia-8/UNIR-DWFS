@@ -14,12 +14,14 @@ import CheckoutPage from './pages/CheckoutPage';
 import AboutPage from './pages/AboutPage';
 import ContactPage from './pages/ContactPage';
 import NotFoundPage from './pages/NotFoundPage';
+import BookDetailPage from './pages/BookDetailPage';
 
 const router = createBrowserRouter(
   createRoutesFromElements(
     <>
       <Route element={<MainLayout/>}>
         <Route path='/home' element={<HomePage/>} />
+        <Route path="/book/:id" element={<BookDetailPage />} />
         <Route path='/cart' element={<CartPage/>} />
         <Route path='/checkout' element={<CheckoutPage/>} />
         <Route path='/contact' element={<ContactPage/>} />
