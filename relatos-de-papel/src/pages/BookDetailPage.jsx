@@ -1,4 +1,5 @@
 import BookDetail from "../components/BookDetail";
+import { useParams } from "react-router-dom";
 
 const BookDetailPage = () => {
   const { id } = useParams();
