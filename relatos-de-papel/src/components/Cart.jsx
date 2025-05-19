@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { FaTrash } from "react-icons/fa";
 
 const Cart = () => {
-const { cart, clearCart, removeFromCart } = useCart();
+  const { cart, clearCart, removeFromCart } = useCart();
 
   const total = cart.reduce(
     (sum, item) => sum + item.precio * item.cantidad,
