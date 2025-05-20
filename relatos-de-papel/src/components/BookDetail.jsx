@@ -9,9 +9,9 @@ const BookDetail = ({id}) => {
   const { addToCart } = useCart();
   const [showModal, setShowModal] = useState(false);
   return (
-    <div className="flex justify-center mt-10">
+    <div className="bookdetail">
         <img src={book?.img_url} alt={book?.titulo} />
-        <div className="flex flex-col ml-4 gap-y-5">
+        <div className="bookdetail__item">
           <p>Titulo: <b>{book?.titulo}</b></p>
           <p>Autor: <b>{book?.autor}</b></p>
           <p>Descripción: <i>{book?.descripcion}</i></p>
@@ -31,8 +31,8 @@ const BookDetail = ({id}) => {
           </div>
         </div>
         <Modal show={showModal} onClose={() => setShowModal(false)}>
-          <h2 className="text-xl font-semibold">¡Libro añadido!</h2>
-          <p className="text-gray-600">El libro <b>{book.titulo}</b> fue añadido al carrito</p>
+          <h2 className="modal__title">¡Libro añadido!</h2>
+          <p className="modal__message">El libro <b>{book.titulo}</b> fue añadido al carrito</p>
         </Modal>
     </div>
   )

@@ -184,3 +184,151 @@
 .modal__close{
     @apply mt-4 text-white bg-purple-600 px-4 py-2 rounded hover:bg-purple-700;
 }
+
+.modal__title{
+    @apply text-xl font-semibold;
+}
+
+.modal__message{
+    @apply text-gray-600;
+}
+
+.bookdetail{
+    @apply flex justify-center mt-10;
+}
+
+.bookdetail__item{
+    @apply flex flex-col ml-4 gap-y-5;
+}
+
+.about{
+    @apply bg-gradient-to-br from-purple-200 via-purple-100 to-yellow-100 flex items-center justify-center h-100;
+}
+
+.about__content{
+    @apply text-center space-y-4 text-2xl font-semibold text-gray-800 bg-white/60 backdrop-blur-sm p-10 rounded-2xl shadow-xl;
+}
+
+.contact{
+    @apply flex items-center justify-center h-130;
+}
+
+.contact__form{
+    @apply bg-white p-8 rounded-2xl shadow-lg w-full max-w-md space-y-2;
+}
+
+.form__title{
+    @apply text-2xl font-bold text-center text-gray-800;
+}
+
+.form__label{
+    @apply block text-sm font-medium text-gray-700;
+}
+
+.form__input{
+    @apply mt-1 w-full px-4 py-2 border rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-purple-500
+}
+
+.form__button{
+    @apply w-full bg-purple-900 hover:bg-purple-700 text-white font-semibold py-2 rounded-lg transition duration-200
+}
+
+.checkoutpage{
+    @apply p-8 space-y-6 bg-gray-50 h-130;
+}
+
+.checkoutpage__title{
+    @apply text-2xl font-bold;
+}
+
+.checkoutpage__wrapper{
+    @apply flex flex-wrap gap-6;
+}
+
+.checkoutidentity{
+    @apply bg-white p-4 rounded shadow w-full md:w-[300px];
+}
+
+.checkoutidentity__title{
+    @apply font-bold mb-2;
+}
+
+.checkoutidentity__form{
+    @apply space-y-2;
+}
+
+.checkout__input{
+    @apply w-full border p-2 rounded
+}
+
+.checkoutaddress{
+    @apply bg-white p-4 rounded shadow grow;
+}
+
+.checkoutaddress__grid{
+    @apply grid gap-4;
+}
+
+.checkoutaddress__title{
+    @apply font-bold mb-2;
+}
+
+.checkoutpayment{
+    @apply bg-white p-4 rounded shadow grow;
+}
+
+.checkoutpayment__title{
+    @apply font-bold mb-2;
+}
+
+.checkoutpayment__form{
+    @apply space-y-2 mt-2;
+}
+
+.checkoutpayment__button{
+    @apply w-full mt-4 bg-purple-900 text-white px-4 py-2 rounded hover:bg-purple-600;
+}
+
+.checkoutpayment__expdate{
+    @apply grid grid-cols-2 gap-2;
+}
+
+.expdate__input{
+    @apply border p-2 rounded;
+}
+
+.checkoutpayment__type{
+    @apply flex items-center gap-4 mt-2;
+}
+
+.type__label{
+    @apply flex items-center gap-1;
+}
+
+.checkoutitems{
+    @apply bg-white p-4 rounded shadow w-full md:w-[250px];
+}
+
+.checkoutitems__title{
+    @apply font-bold flex items-center gap-2 mb-4;
+}
+
+.checkoutitems__list{
+    @apply space-y-2;
+}
+
+.item__li{
+    @apply flex gap-2 items-center justify-between;
+}
+
+.item__title{
+    @apply flex gap-2;
+}
+
+.checkoutitems__total{
+    @apply font-semibold text-lg mb-4 justify-end flex;
+}
+
+.total__value{
+    @apply text-purple-600 ml-3;
+}

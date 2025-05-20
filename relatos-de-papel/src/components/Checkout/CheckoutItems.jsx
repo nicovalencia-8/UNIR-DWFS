@@ -10,19 +10,19 @@ const CheckoutItems = () => {
     );
 
     return (
-        <div className="bg-white p-4 rounded shadow w-full md:w-[250px]">
-          <h2 className="font-bold flex items-center gap-2 mb-4">🛒 Resumen de la Compra</h2>
-          <ul className="space-y-2">
+        <div className="checkoutitems">
+          <h2 className="checkoutitems__title">🛒 Resumen de la Compra</h2>
+          <ul className="checkoutitems__list">
             {cart.map((item) => (
-              <li key={item} className="flex gap-2 items-center justify-between">
-                <div className="flex gap-2">
+              <li key={item} className="item__li">
+                <div className="item__title">
                   <span>{item.titulo}({item.cantidad})</span>
                 </div>
                 <span>$ {(item.precio * item.cantidad).toFixed(2)}</span>
               </li>
             ))}
-            <div className="font-semibold text-lg mb-4 justify-end flex">
-              Total compra: <span className="text-purple-600 ml-3">  ${total.toFixed(2)}</span>
+            <div className="checkoutitems__total">
+              Total compra: <span className="total__value">  ${total.toFixed(2)}</span>
             </div>
           </ul>
         </div>
