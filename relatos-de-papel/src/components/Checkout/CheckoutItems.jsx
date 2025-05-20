@@ -1,8 +1,7 @@
-import React from 'react'
 import useCart from '../../hooks/cartHook';
 
 const CheckoutItems = () => {
-    const { cart, clearCart, removeFromCart } = useCart();
+    const { cart } = useCart();
   
     const total = cart.reduce(
       (sum, item) => sum + item.precio * item.cantidad,

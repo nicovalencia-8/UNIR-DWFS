@@ -5,6 +5,8 @@ const CART_KEY = "cart_relatos";
 export default function useCart() {
   const [cart, setCart] = useState([]);
   const isInitialMount = useRef(true);
+  //UseRef Persiste entre renderizados, Usualmente se utiliza para validar el primer render
+  //UseRef tiene un valor .current
 
   useEffect(() => {
     const storedCart = localStorage.getItem(CART_KEY);
@@ -35,14 +37,8 @@ export default function useCart() {
     } else {
       updatedCart = [...currentCart, { ...book, cantidad: 1 }];
     }
-
-    saveCart(updatedCart);
-  }
-
-  const saveCart = (updatedCart) => {
-    localStorage.setItem(CART_KEY, JSON.stringify(updatedCart));
     setCart(updatedCart);
-  };
+  }
 
   const clearCart = () => {
     localStorage.removeItem(CART_KEY);
